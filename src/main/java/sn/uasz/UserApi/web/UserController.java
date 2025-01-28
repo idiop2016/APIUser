@@ -41,8 +41,8 @@ public class UserController {
 
     @PostMapping("/user/{id}")
     public String updateUser(@PathVariable Long id, @ModelAttribute User user) {
-        user.setId(id);
-        userRepository.save(user);
+        /*user.setId(id);
+        userRepository.save(user);*/
         return "redirect:/user/index";
     }
 

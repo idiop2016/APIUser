@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import sn.uasz.UserApi.entities.Enseignant;
 import sn.uasz.UserApi.repositories.EtudiantRepository;
 import sn.uasz.UserApi.entities.Etudiant;
 
@@ -39,10 +40,11 @@ public class EtudiantController {
     }
 
     @PostMapping("/etudiant/{id}")
-    public String updateEtudiant(@PathVariable Long id, @ModelAttribute Etudiant etudiant) {
-        etudiant.setId(id);
-        etudiantRepository.save(etudiant);
-        return "redirect:/etudiant/index";
+    public String updateEtudiant(@PathVariable Long id, Model model) {
+        Etudiant etu=etudiantRepository.findById(id).orElse(null);
+        if (etu==null) throw new RuntimeException("Etudiant introuvable");
+        model.addAttribute("enseignant", etu);
+        return "etudiant/editEtudiant";
     }
 
     @GetMapping("/etudiant/delete/{id}")

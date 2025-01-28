@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>sn.uasz</groupId>
-	<artifactId>UserApi</artifactId>
+	<artifactId>UserAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>UserApi</name>
 	<description>Api utilisateurs avec Spring Boot</description>
