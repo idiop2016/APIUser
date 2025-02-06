@@ -2,10 +2,7 @@ package sn.uasz.UserApi.entities;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 import lombok.*;
-
-import java.util.List;
 
 @Entity
 @AllArgsConstructor @NoArgsConstructor @Getter @Setter @ToString
@@ -17,30 +14,6 @@ public class Enseignant extends User{
     private String grade;
     private String createby;
     private String createat;
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public void setMatricule(String matricule) {
-        this.matricule = matricule;
-    }
-
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
-
-    public void setCreateby(String createby) {
-        this.createby = createby;
-    }
-
-    public void setCreateat(String createat) {
-        this.createat = createat;
-    }
 
     public String getNom() {
         return nom;
@@ -64,5 +37,29 @@ public class Enseignant extends User{
 
     public String getCreateat() {
         return createat;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public void setCreateby(String createby) {
+        this.createby = createby;
+    }
+
+    public void setCreateat(String createat) {
+        this.createat = createat;
     }
 }
